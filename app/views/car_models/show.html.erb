@@ -1,0 +1,23 @@
+<% if flash[:notice] %>
+  <div> <%= flash[:notice] %> </div>
+<% end %>
+<div>
+  <p>
+    <%= @car_model.name %>
+  </p>
+  <p>
+    <%= @car_model.year %>
+  </p>
+  <p>
+    <%= @car_model.motorization %>
+  </p>
+  <p>
+    <%= @car_model.fuel_type %>
+  </p>
+  <p>
+    <%= @car_model.manufacturer.name %>
+  </p>
+  <p>
+    <%= @car_model.car_category.name %>
+  </p>
+</div>

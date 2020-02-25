@@ -1,0 +1,8 @@
+<div class="columns is-centered">
+  <div class="column is-half">
+      <% @manufacturers.each do |manufacturer| %>
+        <%= link_to manufacturer.name, manufacturer  %><br />
+      <% end %>
+    <%= link_to 'Registrar novo fabricante', new_manufacturer_path %><br />
+    </div>
+</div>

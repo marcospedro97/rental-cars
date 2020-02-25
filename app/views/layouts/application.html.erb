@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RentalCars</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar is-info">
+      <div id="navbarExample" class="navbar-menu"> 
+        <div class="navbar-end">
+          <div class="field is-grouped">
+            <div class="navbar-brand">
+                <div class="navbar-burger burger" data-target="navbarExample">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+                  <div id="navbarExample" class="navbar-menu"> 
+                    <div class="navbar-end">
+                      <div class="field is-grouped">
+                        <%= link_to root_path, class: "navbar-item" do %>
+                          Rental Cars
+                        <% end %>
+                        <% if user_signed_in? %>
+                          <span><%= link_to 'Carros para Locação', cars_path %></span>
+                          <span><%= link_to 'Categorias de Carros', car_categories_path %></span>
+                          <span><%= link_to 'Fabricantes', manufacturers_path %></span>
+                          <span><%= link_to 'Filiais', subsidiaries_path %></span>
+                          <span><%= link_to 'Clientes', clients_path %></span>
+                          <span><%= link_to 'Modelos de Carros', car_models_path %></span>
+                          <span><%= link_to 'Locações', rentals_path %></span> 
+                          <span><%= link_to 'Sair', destroy_user_session_path, method: :delete %></span>
+                        <% else %>
+                          <span><%= link_to 'Entrar', new_user_session_path %></span>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <%= notice %>
+    <%= alert %>
+    <%= yield %>
+  </body>
+</html>

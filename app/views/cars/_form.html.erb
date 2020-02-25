@@ -1,0 +1,52 @@
+<% if car.errors.any? %>
+  <ul>
+  <% car.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+        <%= form_for car do |f| %>
+          <div class="field">
+            <div class="control">
+              <%= f.label :license_plate, 'Placa' %><br />
+              <%= f.text_field :license_plate, class:"input is-primary" %><br />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.label :color, 'Cor' %><br />
+              <%= f.text_field :color, class:"input is-primary" %><br />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.label :mileage, 'Kilometragem' %><br />
+              <%= f.text_field :mileage, class:"input is-primary" %><br />
+            </div>
+          </div>
+          <div class="field">
+              <%= f.label :car_model_id, 'Modelo' %><br />
+            <div class="select is-medium">
+              <%= f.collection_select(:car_model_id, @car_models, :id, :name) %><br />
+            </div>
+          </div>
+          <div class="field">
+              <%= f.label :subsidiary_id, 'Filial' %><br />
+            <div class="select is-medium">
+              <%= f.collection_select(:subsidiary_id, @subsidiaries, :id, :name) %><br />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.submit 'Enviar', class:"button is-info is-medium" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

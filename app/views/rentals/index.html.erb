@@ -1,0 +1,29 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+        <div>
+          <%= form_with(url: search_rentals_path, method: 'get') do %>
+            <%= label_tag :q, 'Pesquisa' %>
+            <%= text_field_tag :q %>
+            <%= submit_tag 'Buscar', class:"button is-info is-small" %>
+          <% end %>
+          <% if @rentals.empty? %>
+            <h2>Nenhuma Locação encontrada</h2>
+          <% else %>
+            <% @rentals.each do |rental| %>
+              <%= rental.code %>
+              <%= rental.start_date.strftime('%d/%m/%Y') %>
+              <%= rental.end_date.strftime('%d/%m/%Y') %>
+              <%= rental.client.name %>
+              <%= rental.client.document %>
+              <%= rental.client.email %>
+              <%= rental.car_category.name %>
+            <% end %>
+          <% end %>
+          <%= link_to 'Nova Locação', new_rental_path%>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

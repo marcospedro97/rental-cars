@@ -1,0 +1,10 @@
+<% if @car_category.errors.any? %>
+  <% @car_category.errors.full_messages.each do |message| %>
+    <p>
+      <%= message %>
+    </p>
+  <% end %>
+<% end %>
+<h2 class="title is-2">Nova Categoria de Carro</h2>
+
+<%= render partial: 'form', locals: { car_category: @car_category } %>

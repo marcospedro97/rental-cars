@@ -1,0 +1,37 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+        <%= form_for rental do |f| %>
+          <div class="field">
+            <div class="control">
+            <%= f.label :start_date, 'Data da Locação' %><br />
+            <%= f.text_field :start_date, class:"input is-primary" %><br />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.label :end_date, 'Data final' %><br />
+              <%= f.text_field :end_date, class:"input is-primary" %><br />
+            </div>
+          </div>
+          <div class="field">
+            <%= f.label :client_id, 'Cliente' %><br />
+            <div class="select is-medium">
+              <%= f.collection_select(:client_id, @clients, :id, :name) %><br />
+            </div>
+          </div>
+          <div class="field">
+            <%= f.label :car_category_id, 'Categoria'%><br />
+            <div class="select is-medium">
+              <%= f.collection_select(:car_category_id, @car_categories, :id, :name) %><br />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.submit 'Enviar', class:"button is-info is-medium" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

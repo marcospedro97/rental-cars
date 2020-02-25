@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+        <% if @rentals.blank? %>
+          <h2>Nenhuma Locação encontrada com os parâmetros</h2>
+        <% else %>
+          <h2>Foram encontradas <%= @rentals.count %> Locações</h2>
+          <% @rentals.each do |rental| %>
+            <%= rental.code %>
+            <%= rental.start_date.strftime('%d/%m/%Y') %>
+            <%= rental.end_date.strftime('%d/%m/%Y') %>
+            <%= rental.client.name %>
+            <%= rental.client.document %>
+            <%= rental.client.email %>
+            <%= rental.car_category.name %>
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

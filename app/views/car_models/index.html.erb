@@ -1,0 +1,18 @@
+<h1>Modelos de Carros</h1>
+<% if @car_models.empty? %>
+  <p>
+    Nenhum Modelo de carro registrado ainda
+  </p>
+<% else %>
+  <% @car_models.each do |car_model| %>
+    <p>Nome</p>
+    <%= link_to car_model.name, car_model %>
+    <p>Ano</p>
+    <%= car_model.year %>
+    <p>Motorização</p>
+    <%= car_model.motorization %>
+    <p>Combustível</p>
+    <%= car_model.fuel_type%>
+  <% end %>
+<% end %>
+<%= link_to 'Registrar modelo de Carro', new_car_model_path %>

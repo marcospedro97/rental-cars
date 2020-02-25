@@ -1,0 +1,18 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+        <h1>Atualizar Locação</h1>
+          <%= form_with(url: actualize_post_rental_path) do |f| %>
+            <div class="field">
+              <%= f.label(:car_id, 'Carro')%><br />
+              <div class="select is-medium">
+                <%= f.collection_select(:car_id, @cars, :id, :car_identification) %><br />
+              </div>
+            </div>
+            <%= f.submit 'Enviar', class:"button is-info is-medium" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</section>

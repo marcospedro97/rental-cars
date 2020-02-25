@@ -1,0 +1,9 @@
+<% if @car_model.errors.any? %>
+  <% @car_model.errors.full_messages.each do |message| %>
+    <p>
+      <%= message %>
+    </p>
+  <% end %>
+<% end %>
+<h1> Novo modelo de Carro</h1>
+<%= render partial: 'form', locals: { car_model: @car_model } %>

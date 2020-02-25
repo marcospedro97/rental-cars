@@ -1,0 +1,40 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+        <% if subsidiary.errors.any? %>
+          <ul>
+          <% subsidiary.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        <% end %>
+        <%= form_for subsidiary do |f| %>
+          <div class="field">
+            <div class="control">
+              <%= f.label :name, 'Nome' %><br />
+              <%= f.text_field :name, class:"input is-primary" %><br />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.label :cnpj, 'CNPJ' %><br />
+              <%= f.text_field :cnpj, class:"input is-primary" %><br />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.label :address, 'Endereço' %><br />
+              <%= f.text_field :address, class:"input is-primary" %><br />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.submit 'Enviar', class:"button is-info is-medium" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

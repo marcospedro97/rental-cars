@@ -1,0 +1,8 @@
+<% if flash[:notice] %>
+  <div> <%= flash[:notice] %> </div>
+<% end %>
+<%= @rental.client.name %>
+<%= @rental.car_category.name %>
+<%= @rental.start_date.strftime('%y/%m/%d')%>
+<%= @rental.end_date.strftime('%y/%m/%d')%>
+<%= link_to 'Validar', actualize_rental_path %>

@@ -1,0 +1,15 @@
+<div class="columns is-centered">
+  <div class="column is-half">
+    <h1> Carros para Locação </h1>
+      <% if @cars.empty? %>
+        <p>
+          Nenhum Modelo de carro registrado ainda
+        </p>
+      <% else %>
+          <% @cars.each do |car| %>
+              <%= car.car_identification%><br />
+          <% end %>
+      <% end %>
+      <%= link_to 'Registrar Carro', new_car_path %>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+        <%= form_for car_category do |f| %>
+          <div class="field">
+             <div class="control">
+                <%= f.label :name, 'Nome' %><br />
+                <%= f.text_field :name, class:"input is-primary" %><br />
+              </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.label :daily_rate, 'Diária Padrão' %><br />
+              <%= f.text_field :daily_rate, class:"input is-primary" %><br />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.label :car_insurance, 'Seguro do Carro' %><br />
+              <%= f.text_field :car_insurance, class:"input is-primary" %><br />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.label :third_party_insurance, 'Seguro para Terceiros' %><br />
+              <%= f.text_field :third_party_insurance, class:"input is-primary" %><br />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <%= f.submit 'Enviar', class:"button is-info is-medium" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

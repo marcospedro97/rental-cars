@@ -1,0 +1,13 @@
+<h1>Categoria <%= @car_category.name %></h1>
+
+<dl>
+  <dt>Diária Padrão:</dt>
+  <dd><%= @car_category.daily_rate %></dd>
+  <dt>Seguro do Carro:</dt>
+  <dd><%= @car_category.car_insurance %></dd>
+  <dt>Seguro para Terceiros:</dt>
+  <dd><%= @car_category.third_party_insurance %></dd>
+</dl>
+<%= link_to 'Apagar',  @car_category, method: :delete, data: {confirm: 'Tem certeza?'}%>
+<%= link_to 'Editar', edit_car_category_path(@car_category) %>
+<%= link_to 'Voltar', car_categories_path %>

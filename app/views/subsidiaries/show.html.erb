@@ -1,0 +1,8 @@
+<h1>Filial <%= @subsidiary.name %></h1>
+
+<p>CNPJ: <%= @subsidiary.cnpj %></p>
+<p>Endereço: <%= @subsidiary.address %></p>
+
+<%= link_to 'Editar', edit_subsidiary_path(@subsidiary) %>
+<%= link_to 'Apagar',  @subsidiary, method: :delete, data: {confirm: 'Tem certeza?'}%>
+<%= link_to 'Carros da Filial', cars_path(@subsidiary) %>
