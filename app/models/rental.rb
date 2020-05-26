@@ -14,7 +14,7 @@ class Rental < ApplicationRecord
   private
 
   def start_date_cannot_be_in_the_past
-    if start_date.present? and start_date.strftime('%d/%m/%y') < Date.current.strftime('%d/%m/%y')
+    if start_date.present? and start_date.strftime('%d/%m/%y') <  Date.current.strftime('%d/%m/%y')
       return errors.add(:start_date, 'Data inicial não pode ser antes de hoje') 
     end
   end

@@ -12,13 +12,13 @@ feature 'User create rental' do
     click_on 'Nova Locação'
     select client.name, from: 'Cliente'
     select car.car_model.car_category.name, from: 'Categoria'
-    fill_in 'Data da Locação', with: Date.current.strftime('%d/%m/%y')
+    fill_in 'Data da Locação', with: 1.days.from_now.strftime('%d/%m/%y')
     fill_in 'Data final', with: 10.days.from_now.strftime('%d/%m/%y')
     click_on 'Enviar'
     # Assert
     expect(page).to have_content(client.name)
     expect(page).to have_content(car.car_model.car_category.name)
-    expect(page).to have_content(Date.current.strftime('%d/%m/%y'))
+    expect(page).to have_content(1.days.from_now.strftime('%d/%m/%y'))
     expect(page).to have_content(10.days.from_now.strftime('%d/%m/%y'))
     expect(page).to have_content('Locação agendada com sucesso')
   end
